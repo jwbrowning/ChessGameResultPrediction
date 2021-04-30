@@ -34,15 +34,15 @@ def Logisitc_Regression(X, Y, learningRate=0.01, maxIter=100, testX = np.asarray
         loss = np.reshape(loss, (D_plus_1, 1))
 
         w = w - learningRate * loss
-        # if t % (maxIter / 20) == 0 or t % (50) == 0:
-        #     print(t, 100 * (t / maxIter), "%")
-        #     acc = Accuracy(testX, testY, w)
-        #     print(w)
-        #     print("Current Accuracy:", acc)
+        if t % (maxIter / 20) == 0 or t % (50) == 0:
+            print(t, 100 * (t / maxIter), "%")
+            acc = Accuracy(testX, testY, w)
+            print(w)
+            print("Current Accuracy:", acc)
 
-        Y[Y == 0] = -1  # change label to be {-1, 1}
-        print(t, Accuracy(X, Y, w))
-        Y[Y == -1] = 0.0  # change label to be {0, 1}
+        # Y[Y == 0] = -1  # change label to be {-1, 1}
+        # print(t, Accuracy(X, Y, w))
+        # Y[Y == -1] = 0.0  # change label to be {0, 1}
 
     Y[Y == 0] = -1  # change label to be {-1, 1}
     return w
@@ -65,14 +65,14 @@ def main():
     testPct = .15
     testX = []
     testY = []
-    with open(r"C:\Users\Johnathan\Downloads\ChessAI2600\wins.txt") as inFile:
+    with open("Data/wins.txt") as inFile:
         for line in inFile:
             split = line.split()
             nums = []
             for i in range(len(split)):
                 # if i == 0 or i == 1 or i == 3 or i == 4 or i == 5 or i == 6 or i == 7 or i == 8:
                 #     continue
-                if i == 3:
+                if i == 3 or (4 < i < 15):
                     continue
                 num = float(split[i])
                 if i == 0 or i == 1:
@@ -94,14 +94,14 @@ def main():
             else:
                 X.append(nums)
                 Y.append([1.0])
-    with open(r"C:\Users\Johnathan\Downloads\ChessAI2600\draws.txt") as inFile:
+    with open("Data/draws.txt") as inFile:
         for line in inFile:
             split = line.split()
             nums = []
             for i in range(len(split)):
                 # if i == 0 or i == 1 or i == 3 or i == 4 or i == 5 or i == 6 or i == 7 or i == 8:
                 #     continue
-                if i == 3:
+                if i == 3 or (4 < i < 15):
                     continue
                 num = float(split[i])
                 if i == 0 or i == 1:
@@ -123,14 +123,14 @@ def main():
             else:
                 X.append(nums)
                 Y.append([-1.0])
-    with open(r"C:\Users\Johnathan\Downloads\ChessAI2600\losses.txt") as inFile:
+    with open("Data/losses.txt") as inFile:
         for line in inFile:
             split = line.split()
             nums = []
             for i in range(len(split)):
                 # if i == 0 or i == 1 or i == 3 or i == 4 or i == 5 or i == 6 or i == 7 or i == 8:
                 #     continue
-                if i == 3:
+                if i == 3 or (4 < i < 15):
                     continue
                 num = float(split[i])
                 if i == 0 or i == 1:

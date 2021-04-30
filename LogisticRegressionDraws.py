@@ -34,15 +34,15 @@ def Logisitc_Regression(X, Y, learningRate=0.01, maxIter=100, testX = np.asarray
         loss = np.reshape(loss, (D_plus_1, 1))
 
         w = w - learningRate * loss
-        # if t % (maxIter / 20) == 0 or t % (10) == 0:
-        #     print(t, 100 * (t / maxIter), "%")
-        #     acc = Accuracy(testX, testY, w)
-        #     print(w)
-        #     print("Current Accuracy:", acc)
+        if t % (maxIter / 20) == 0 or t % (10) == 0:
+            print(t, 100 * (t / maxIter), "%")
+            acc = Accuracy(testX, testY, w)
+            print(w)
+            print("Current Accuracy:", acc)
 
-        Y[Y == 0] = -1  # change label to be {-1, 1}
-        print(t, Accuracy(X, Y, w))
-        Y[Y == -1] = 0.0  # change label to be {0, 1}
+        # Y[Y == 0] = -1  # change label to be {-1, 1}
+        # print(t, Accuracy(X, Y, w))
+        # Y[Y == -1] = 0.0  # change label to be {0, 1}
 
     Y[Y == 0] = -1  # change label to be {-1, 1}
     return w
@@ -65,7 +65,7 @@ def main():
     testPct = .15
     testX = []
     testY = []
-    with open(r"C:\Users\Johnathan\Downloads\ChessAI2600\wins.txt") as inFile:
+    with open("Data/wins.txt") as inFile:
         for line in inFile:
             split = line.split()
             nums = []
@@ -80,26 +80,15 @@ def main():
                 # if i == 2:
                 #     num /= 3.0
                 if i == 2:
-                    if num > 0:
-                        nums.append(num)
-                        nums.append(-num)
-                    else:
-                        nums.append(-num)
-                        nums.append(num)
                     num = abs(num)
                 if i == 4:
-                    if num > 0:
-                        nums.append(num)
-                        nums.append(-num)
-                    else:
-                        nums.append(-num)
-                        nums.append(num)
                     num = abs(num)
                 if i == 15:
                     num /= 10.0
                 if not i == 3:
                     nums.append(num)
-            nums.append(abs(float(split[2]) - float(split[4])))
+            nums.append(abs(float(split[0]) - float(split[1])))
+            # nums.append(abs(float(split[2]) - float(split[4])))
             nums.append(1.0)
             if random.uniform(0.0, 1.0) < testPct:
                 testX.append(nums)
@@ -108,7 +97,7 @@ def main():
             else:
                 X.append(nums)
                 Y.append([-1.0])
-    with open(r"C:\Users\Johnathan\Downloads\ChessAI2600\draws.txt") as inFile:
+    with open("Data/draws.txt") as inFile:
         for line in inFile:
             split = line.split()
             nums = []
@@ -123,26 +112,15 @@ def main():
                 # if i == 2:
                 #     num /= 3.0
                 if i == 2:
-                    if num > 0:
-                        nums.append(num)
-                        nums.append(-num)
-                    else:
-                        nums.append(-num)
-                        nums.append(num)
                     num = abs(num)
                 if i == 4:
-                    if num > 0:
-                        nums.append(num)
-                        nums.append(-num)
-                    else:
-                        nums.append(-num)
-                        nums.append(num)
                     num = abs(num)
                 if i == 15:
                     num /= 10.0
                 if not i == 3:
                     nums.append(num)
-            nums.append(abs(float(split[2]) - float(split[4])))
+            nums.append(abs(float(split[0]) - float(split[1])))
+            # nums.append(abs(float(split[2]) - float(split[4])))
             nums.append(1.0)
             if random.uniform(0.0, 1.0) < testPct:
                 testX.append(nums)
@@ -151,7 +129,7 @@ def main():
             else:
                 X.append(nums)
                 Y.append([1.0])
-    with open(r"C:\Users\Johnathan\Downloads\ChessAI2600\losses.txt") as inFile:
+    with open("Data/losses.txt") as inFile:
         for line in inFile:
             split = line.split()
             nums = []
@@ -168,24 +146,13 @@ def main():
                 if i == 15:
                     num /= 10.0
                 if i == 2:
-                    if num > 0:
-                        nums.append(num)
-                        nums.append(-num)
-                    else:
-                        nums.append(-num)
-                        nums.append(num)
                     num = abs(num)
                 if i == 4:
-                    if num > 0:
-                        nums.append(num)
-                        nums.append(-num)
-                    else:
-                        nums.append(-num)
-                        nums.append(num)
                     num = abs(num)
                 if not i == 3:
                     nums.append(num)
-            nums.append(abs(float(split[2]) - float(split[4])))
+            nums.append(abs(float(split[0]) - float(split[1])))
+            # nums.append(abs(float(split[2]) - float(split[4])))
             nums.append(1.0)
             if random.uniform(0.0, 1.0) < testPct:
                 testX.append(nums)

@@ -16,6 +16,7 @@ def clear():
 
 random.seed(87756892)
 
+# Download stockfish and put path here
 stockfishPath = r"C:\Users\Johnathan\Downloads\stockfish_12_win_x64_bmi2\stockfish_20090216_x64_bmi2"
 engine = chess.engine.SimpleEngine.popen_uci(stockfishPath)
 

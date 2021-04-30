@@ -16,14 +16,12 @@ def clear():
 
 random.seed(87756892)
 
+# Download stockfish and put path here
 stockfishPath = r"C:\Users\Johnathan\Downloads\stockfish_12_win_x64_bmi2\stockfish_20090216_x64_bmi2"
 engine = chess.engine.SimpleEngine.popen_uci(stockfishPath)
 
-pgnfilename = r"C:\Users\Johnathan\Downloads\RandomPGNs\lichess_pgn_2021.03.20_SundanceKid1019_vs_RaisinBranCrunch.TA5C3C2q.pgn"
-# pgnfilename = r"C:\Users\Johnathan\Downloads\caruana_vachier-lagrave_2021.pgn"
-# pgnfilename = r"C:\Users\Johnathan\Downloads\DullSword_vs_Bonkiye_2021.02.26.pgn"
-pgnfilename = r"C:\Users\Johnathan\Downloads\ChessAI2600\NakamuraAnandCandidates2016.pgn"
-# pgnfilename = r"C:\Users\Johnathan\Downloads\pgn_data.pgn"
+pgnfilename = "Data/NakamuraAnandCandidates2016.pgn"
+# pgnfilename = "Data/pgn_data.pgn"
 
 #Read pgn file:
 with open(pgnfilename) as f:

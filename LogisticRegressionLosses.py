@@ -65,7 +65,7 @@ def main():
     testPct = .15
     testX = []
     testY = []
-    with open(r"C:\Users\Johnathan\Downloads\ChessAI2600\wins.txt") as inFile:
+    with open("Data/wins.txt") as inFile:
         for line in inFile:
             split = line.split()
             nums = []
@@ -94,7 +94,7 @@ def main():
             else:
                 X.append(nums)
                 Y.append([-1.0])
-    with open(r"C:\Users\Johnathan\Downloads\ChessAI2600\draws.txt") as inFile:
+    with open("Data/draws.txt") as inFile:
         for line in inFile:
             split = line.split()
             nums = []
@@ -123,7 +123,7 @@ def main():
             else:
                 X.append(nums)
                 Y.append([-1.0])
-    with open(r"C:\Users\Johnathan\Downloads\ChessAI2600\losses.txt") as inFile:
+    with open("Data/losses.txt") as inFile:
         for line in inFile:
             split = line.split()
             nums = []

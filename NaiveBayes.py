@@ -107,36 +107,44 @@ drawDataT = []
 lossDataT = []
 dataT = []
 testPct = .15
+numCount = 0
 
-with open(r"C:\Users\Johnathan\Downloads\ChessAI2600\wins.txt") as inFile:
+with open("Data/wins.txt") as inFile:
     for line in inFile:
         split = line.split()
         nums = []
+        i = 0
         for s in split:
-            if len(nums) < 4:
+            if i < 3 or i == 15:
                 nums.append(float(s))
+            i += 1
+        numCount = len(nums)
         if random.uniform(0,1) < testPct:
             winDataT.append(nums)
         else:
             winData.append(nums)
-with open(r"C:\Users\Johnathan\Downloads\ChessAI2600\draws.txt") as inFile:
+with open("Data/draws.txt") as inFile:
     for line in inFile:
         split = line.split()
         nums = []
+        i = 0
         for s in split:
-            if len(nums) < 4:
+            if i < 3 or i == 15:
                 nums.append(float(s))
+            i += 1
         if random.uniform(0,1) < testPct:
             drawDataT.append(nums)
         else:
             drawData.append(nums)
-with open(r"C:\Users\Johnathan\Downloads\ChessAI2600\losses.txt") as inFile:
+with open("Data/losses.txt") as inFile:
     for line in inFile:
         split = line.split()
         nums = []
+        i = 0
         for s in split:
-            if len(nums) < 4:
+            if i < 3 or i == 15:
                 nums.append(float(s))
+            i += 1
         if random.uniform(0,1) < testPct:
             lossDataT.append(nums)
         else:
@@ -151,7 +159,7 @@ winMeanAndStdDevs = []
 drawMeanAndStdDevs = []
 lossMeanAndStdDevs = []
 counter = 0
-for i in range(4):
+for i in range(numCount):
     if i == 3:
         continue
     data = []
@@ -159,14 +167,14 @@ for i in range(4):
     data.append(stdDev(winData, i, data[0]))
     winMeanAndStdDevs.append(data)
     counter += 1
-for i in range(4):
+for i in range(numCount):
     if i == 3:
         continue
     data = []
     data.append(mean(drawData, i))
     data.append(stdDev(drawData, i, data[0]))
     drawMeanAndStdDevs.append(data)
-for i in range(4):
+for i in range(numCount):
     if i == 3:
         continue
     data = []
@@ -178,16 +186,15 @@ naiveBayes(lossData, drawData, winData)
 
 testPosition = [2800, 2700, 0, 4]
 
-
-# eloWinProb = 1 / (1 + math.pow(10, (testPosition[1] - testPosition[0]) / 400))
-
-
 def wordProb(wordProbsDict, word):
     if word in wordProbsDict:
         return wordProbsDict[word]
     else:
         return alpha / (len(wordProbsDict) + alpha * len(vocabulary))
 
+#
+# CALCULATE ACCURACY FOR NAIVE BAYES:
+#
 correct = 0
 totall = 0
 for line in winDataT:
@@ -276,7 +283,8 @@ for line in lossDataT:
     totall += 1
 
 acc = correct / totall
-print(correct, totall)
+print("Accuracy:")
+print(correct, "/", totall)
 print(acc)
 
 # total = winProb + drawProb + lossProb
