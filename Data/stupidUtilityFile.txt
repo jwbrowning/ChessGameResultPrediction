@@ -1,0 +1,24 @@
+[Event "SKA"]
+[Site "Biel"]
+[Date "1996.07.01"]
+[Round "1"]
+[White "Glek, I."]
+[Black "Onischuk, A."]
+[Result "1-0"]
+[WhiteElo "2670"]
+[BlackElo "2605"]
+[EventDate "1996.??.??"]
+[PlyCount "147"]
+
+1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.g3 Nd4 5.Bg2 Nxf3+ 6.Qxf3 Bc5 7.O-O d6 8.Na4
+Bd4 9.c3 Bg4 10.Qd3 Qd7 11.cxd4 Qxa4 12.dxe5 dxe5 13.Qc3 O-O-O 14.f3 Be6 
+15.Qxe5 Rd3 16.b3 Qd7 17.Rf2 Re8 18.Qc5 b6 19.Qc2 Rd8 20.Bf1 Qd4 21.Bxd3 
+Qxa1 22.Ba6+ Kb8 23.Qb2 Qxb2 24.Bxb2 Ne8 25.d4 c6 26.Rc2 Nc7 27.Be2 Kb7 
+28.g4 a5 29.f4 f6 30.f5 Bf7 31.Kf2 a4 32.Bc4 Bxc4 33.bxc4 a3 34.Bxa3 Rxd4 
+35.Ke3 c5 36.Bb2 Rd1 37.g5 Ne8 38.gxf6 gxf6 39.e5 Kc6 40.Rf2 Re1+ 41.Kd2 
+Re4 42.Kd3 Rh4 43.exf6 Rh3+ 44.Kc2 Nd6 45.Re2 Rf3 46.Re6 Kd7 47.Re7+ Kd8 
+48.Be5 Nxf5 49.Rxh7 Ke8 50.Kd2 Kf8 51.Rb7 Ra3 52.Bc7 Kf7 53.Bd8+ Kg6 54.f7
+Kg7 55.Bxb6 Rxa2+ 56.Kc3 Nh6 57.f8=Q+ Kxf8 58.Bxc5+ Ke8 59.Re7+ Kd8 60.h4 
+Rh2 61.Rh7 Nf5 62.h5 Kc8 63.Bb6 Ng3 64.h6 Ne4+ 65.Kb4 Nf6 66.Rh8+ Kb7 67.
+Bd4 Nd7 68.h7 Rh4 69.Kb5 Rh5+ 70.c5 Kc7 71.Kc4 Rh4 72.Kd3 Rh3+ 73.Ke2 Rh5 
+74.Kf3 1-0
