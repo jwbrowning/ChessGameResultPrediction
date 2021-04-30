@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: uci
+Version: 1.0.6
+Summary: Unique Content Identifier for Islamic content 
+Home-page: https://github.com/octabytes/uci
+Author: OctaByte
+Author-email: Dev@octabyte.io
+License: Apache 2.0
+Keywords: UCI Islam Unique-Content-Identifier
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+Requires-Dist: nltk (==3.5)
+
+# UCI
+
+Unique Content Identifier - Generate Unique ids for Islamic content
+
+# Example
+
+```python
+from uci import UCI
+
+uci = UCI(46655)
+
+print(uci.next)
+print(uci.next)
+print(uci.next)
+
+print(uci.end_on)
+```
+
+
