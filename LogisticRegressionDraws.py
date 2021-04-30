@@ -87,7 +87,7 @@ def main():
                     num /= 10.0
                 if not i == 3:
                     nums.append(num)
-            nums.append(abs(float(split[0]) - float(split[1])))
+            # nums.append(abs(float(split[0]) - float(split[1])))
             # nums.append(abs(float(split[2]) - float(split[4])))
             nums.append(1.0)
             if random.uniform(0.0, 1.0) < testPct:
@@ -119,7 +119,7 @@ def main():
                     num /= 10.0
                 if not i == 3:
                     nums.append(num)
-            nums.append(abs(float(split[0]) - float(split[1])))
+            # nums.append(abs(float(split[0]) - float(split[1])))
             # nums.append(abs(float(split[2]) - float(split[4])))
             nums.append(1.0)
             if random.uniform(0.0, 1.0) < testPct:
@@ -151,7 +151,7 @@ def main():
                     num = abs(num)
                 if not i == 3:
                     nums.append(num)
-            nums.append(abs(float(split[0]) - float(split[1])))
+            # nums.append(abs(float(split[0]) - float(split[1])))
             # nums.append(abs(float(split[2]) - float(split[4])))
             nums.append(1.0)
             if random.uniform(0.0, 1.0) < testPct:
